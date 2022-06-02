@@ -61,10 +61,10 @@ async def dl_link(event):
     hehe = f"{out};{dl};0"
     wah = code(hehe)
     nn = await xxx.edit(
-        "**🗜 Compressing...**",
+        "**🗜 සම්පීඩනය කරමින්...**",
         buttons=[
-            [Button.inline("STATS", data=f"stats{wah}")],
-            [Button.inline("CANCEL", data=f"skip{wah}")],
+            [Button.inline("දැනට තත්ත්වය", data=f"stats{wah}")],
+            [Button.inline("අවලංගු කරන්න", data=f"skip{wah}")],
         ],
     )
     cmd = f"""ffmpeg -i "{dl}" {ffmpegcode[0]} "{out}" -y"""
