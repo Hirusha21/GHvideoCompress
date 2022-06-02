@@ -20,21 +20,21 @@ except Exception as er:
 @bot.on(events.NewMessage(pattern="/start"))
 async def _(e):
     if str(e.sender_id) not in OWNER and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+        return e.reply("**සමාවන්න ඔබ බලයලත් පරිශීලකයෙක් නොවේ!**")
     await start(e)
 
 
 @bot.on(events.NewMessage(pattern="/setcode"))
 async def _(e):
     if str(e.sender_id) not in OWNER and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+        return e.reply("**සමාවන්න ඔබ බලයලත් පරිශීලකයෙක් නොවේ!**")
     await coding(e)
 
 
 @bot.on(events.NewMessage(pattern="/getcode"))
 async def _(e):
     if str(e.sender_id) not in OWNER and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+        return e.reply("**සමාවන්න ඔබ බලයලත් පරිශීලකයෙක් නොවේ!**")
     await getcode(e)
 
 
@@ -55,56 +55,56 @@ async def _(e):
 @bot.on(events.NewMessage(pattern="/cmds"))
 async def _(e):
     if str(e.sender_id) not in OWNER and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+        return e.reply("**සමාවන්න ඔබ බලයලත් පරිශීලකයෙක් නොවේ!**")
     await zylern(e)
 
 
 @bot.on(events.NewMessage(pattern="/ping"))
 async def _(e):
     if str(e.sender_id) not in OWNER and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+        return e.reply("**සමාවන්න ඔබ බලයලත් පරිශීලකයෙක් නොවේ!**")
     await up(e)
 
 
 @bot.on(events.NewMessage(pattern="/sysinfo"))
 async def _(e):
     if str(e.sender_id) not in OWNER and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+        return e.reply("**සමාවන්න ඔබ බලයලත් පරිශීලකයෙක් නොවේ!**")
     await sysinfo(e)
 
 
 @bot.on(events.NewMessage(pattern="/leech"))
 async def _(e):
     if str(e.sender_id) not in OWNER and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+        return e.reply("**සමාවන්න ඔබ බලයලත් පරිශීලකයෙක් නොවේ!**")
     await dl_link(e)
 
 
 @bot.on(events.NewMessage(pattern="/help"))
 async def _(e):
     if str(e.sender_id) not in OWNER and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+        return e.reply("**සමාවන්න ඔබ බලයලත් පරිශීලකයෙක් නොවේ!**")
     await ihelp(e)
 
 
 @bot.on(events.NewMessage(pattern="/renew"))
 async def _(e):
     if str(e.sender_id) not in OWNER and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+        return e.reply("**සමාවන්න ඔබ බලයලත් පරිශීලකයෙක් නොවේ!**")
     await renew(e)
 
 
 @bot.on(events.NewMessage(pattern="/clear"))
 async def _(e):
     if str(e.sender_id) not in OWNER and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+        return e.reply("**සමාවන්න ඔබ බලයලත් පරිශීලකයෙක් නොවේ!**")
     await clearqueue(e)
 
 
 @bot.on(events.NewMessage(pattern="/speed"))
 async def _(e):
     if str(e.sender_id) not in OWNER and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+        return e.reply("**සමාවන්න ඔබ බලයලත් පරිශීලකයෙක් නොවේ!**")
     await test(e)
     
     
@@ -139,12 +139,12 @@ async def _(e):
 @bot.on(events.NewMessage(incoming=True))
 async def _(event):
         if str(event.sender_id) not in OWNER and event.sender_id !=DEV:
-            return await event.reply_text("**Sorry You're not An Authorised User!**")
+            return await event.reply_text("**සමාවන්න ඔබ බලයලත් පරිශීලකයෙක් නොවේ!**")
         if not event.photo:
             return
         os.system("rm thumb.jpg")
         await event.client.download_media(event.media, file="/bot/thumb.jpg")
-        await event.reply("**Thumbnail Saved Successfully.**")
+        await event.reply("**සිඟිති රුව සාර්ථකව සුරකින ලදී.**")
 
 
 @bot.on(events.NewMessage(incoming=True))
@@ -157,7 +157,7 @@ async def something():
         try:
             if not WORKING and QUEUE:
                 user = int(OWNER.split()[0])
-                e = await bot.send_message(user, "** Downloading Queue Files...**")
+                e = await bot.send_message(user, "** පෝලිම් ගොනු බාගනිමින්...**")
                 s = dt.now()
                 try:
                     if isinstance(QUEUE[list(QUEUE.keys())[0]], str):
@@ -179,7 +179,7 @@ async def something():
                                         t,
                                         e,
                                         tt,
-                                        f"** Downloading**\n__{dl.replace(f'downloads/', '')}__",
+                                        f"** බාගත කරමින්**\n__{dl.replace(f'downloads/', '')}__",
                                     )
                                 ),
                             )
@@ -199,7 +199,7 @@ async def something():
                 hehe = f"{out};{dl};{list(QUEUE.keys())[0]}"
                 wah = code(hehe)
                 nn = await e.edit(
-                    "**🗜 Compressing...**",
+                    "**🗜 සම්පීඩනය කරමින්...**",
                     buttons=[
                         [Button.inline("STATS", data=f"stats{wah}")],
                         [Button.inline("CANCEL", data=f"skip{wah}")],
@@ -213,7 +213,7 @@ async def something():
                 er = stderr.decode()
                 try:
                     if er:
-                        await e.edit(str(er) + "\n\n**ERROR**")
+                        await e.edit(str(er) + "\n\n**දෝෂයකි**")
                         QUEUE.pop(list(QUEUE.keys())[0])
                         os.remove(dl)
                         os.remove(out)
@@ -230,7 +230,7 @@ async def something():
                         file=f,
                         name=out,
                         progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                            progress(d, t, nnn, ttt, f"** Uploading**\n__{out.replace(f'encode/', '')}__")
+                            progress(d, t, nnn, ttt, f"** උඩුගත කරමින්**\n__{out.replace(f'encode/', '')}__")
                         ),
                     )
                 await nnn.delete()
@@ -244,7 +244,7 @@ async def something():
                 xxx = ts(int((eees - ees).seconds) * 1000)
                 a1 = await info(dl, e)
                 a2 = await info(out, e)
-                dk = f"<b>File Name:</b> {newFile}\n\n<b>Original File Size:</b> {hbs(org)}\n<b>Encoded File Size:</b> {hbs(com)}\n<b>Encoded Percentage:</b> {per}\n\n<b>Get Mediainfo Here:</b> <a href='{a1}'>Before</a>/<a href='{a2}'>After</a>\n\n<i>Downloaded in {x}\nEncoded in {xx}\nUploaded in {xxx}</i>"
+                dk = f"<b>ගොනු නම:</b> {newFile}\n\n<b>මුල් ගොනු ප්‍රමාණය:</b> {hbs(org)}\n<b>කේතගත ගොනු ප්‍රමාණය:</b> {hbs(com)}\n<b>කේතගත ප්‍රතිශතය:</b> {per}\n\n<b>මෙහි මාධ්‍ය තොරතුරු ලබා ගන්න:</b> <a href='{a1}'>පෙර</a>/<a href='{a2}'>පසු</a>\n\n<i>බාගත කළේ {x}\nකේතනය කළේ {xx}\nඋඩුගත කළේ {xxx}</i>"
                 ds = await e.client.send_file(
                     e.chat_id, file=ok, force_document=True, caption=dk, link_preview=False, thumb=thum, parse_mode="html"
                 )
@@ -259,7 +259,7 @@ async def something():
 
 ########### Start ############
 
-LOGS.info("Bot has started.")
+LOGS.info("බොට් ආරම්භ වී ඇත.")
 with bot:
     bot.loop.run_until_complete(something())
     bot.loop.run_forever()
