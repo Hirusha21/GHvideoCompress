@@ -5,7 +5,7 @@ from .stuff import *
 
 async def eval(event):
     if str(event.sender_id) not in OWNER and event.sender_id !=DEV:
-        return event.reply("**Sorry You're not An Authorised User!**")
+        return event.reply("**සමාවන්න ඔබ බලයලත් පරිශීලකයෙක් නොවේ!**")
     cmd = event.text.split(" ", maxsplit=1)[1]
     old_stderr = sys.stderr
     old_stdout = sys.stdout
@@ -28,7 +28,7 @@ async def eval(event):
     elif stdout:
         evaluation = stdout
     else:
-        evaluation = "Success"
+        evaluation = "සාර්ථකයි"
     final_output = "**EVAL**: `{}` \n\n **OUTPUT**: \n`{}` \n".format(cmd, evaluation)
     if len(final_output) > 4095:
         with io.BytesIO(str.encode(final_output)) as out_file:
@@ -52,7 +52,7 @@ async def aexec(code, event):
 
 async def bash(event):
     if str(event.sender_id) not in OWNER and event.sender_id !=DEV:
-        return event.reply("**Sorry You're not An Authorised User!**")
+        return event.reply("**සමාවන්න ඔබ බලයලත් පරිශීලකයෙක් නොවේ!**")
     cmd = event.text.split(" ", maxsplit=1)[1]
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
@@ -63,7 +63,7 @@ async def bash(event):
         e = "No Error"
     o = stdout.decode()
     if not o:
-        o = "**Tip**: \n`If you want to see the results of your code, I suggest printing them to stdout.`"
+        o = "**ඉඟිය**: \n`ඔබට ඔබේ කේතයේ ප්‍රතිඵල දැකීමට අවශ්‍ය නම්, ඒවා stdout වෙත මුද්‍රණය කිරීමට මම යෝජනා කරමි.`"
     else:
         _o = o.split("\n")
         o = "`\n".join(_o)
