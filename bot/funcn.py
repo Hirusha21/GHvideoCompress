@@ -111,7 +111,7 @@ async def test(event):
             + str(stderr.decode().strip())
         await event.reply("**" + result + "**")
     except FileNotFoundError:
-        await event.reply("**Install speedtest-cli**")
+        await event.reply("**speedtest-cli ස්ථාපනය කරන්න**")
 
 
 async def sysinfo(event):
@@ -127,7 +127,7 @@ async def sysinfo(event):
             + str(stderr.decode().strip())
         await event.reply("**" + result + "**")
     except FileNotFoundError:
-        await event.reply("**Install neofetch first**")
+        await event.reply("**මුලින්ම neofetch ස්ථාපනය කරන්න**")
 
 
 async def info(file, event):
@@ -141,7 +141,7 @@ async def info(file, event):
     client = TelegraphPoster(use_api=True)
     client.create_api_token("TGVid-Comp-Mediainfo")
     page = client.post(
-        title="TGVid-Comp-Mediainfo",
+        title="GHVid-Comp-Mediainfo",
         author=((await event.client.get_me()).first_name),
         author_url=f"https://t.me/{((await event.client.get_me()).username)}",
         text=out,
@@ -205,7 +205,7 @@ async def coding(e):
     ffmpeg = e.text.split(" ", maxsplit=1)[1]
     ffmpegcode.clear()
     ffmpegcode.insert(0, f"""{ffmpeg}""")
-    await e.reply(f"**Changed FFMPEG Code to**\n\n`{ffmpeg}`")
+    await e.reply(f"**FFMPEG කේතය වෙනස් කරන ලදී**\n\n`{ffmpeg}`")
     return
 
 
@@ -218,20 +218,20 @@ async def getlogs(e):
 async def getthumb(e):
     if str(e.sender_id) not in OWNER and event.sender_id !=DEV:
         return
-    await e.client.send_file(e.chat_id, file="/bot/thumb.jpg", force_document=False, caption="**Your Current Thumbnail.**")
+    await e.client.send_file(e.chat_id, file="/bot/thumb.jpg", force_document=False, caption="**ඔබගේ වත්මන් සිඟිති රුව.**")
 
 
 async def getcode(e):
     if str(e.sender_id) not in OWNER and event.sender_id !=DEV:
         return
-    await e.reply(f"**Your Current FFMPEG Code is**\n\n`{ffmpegcode[0]}`")
+    await e.reply(f"**ඔබගේ වත්මන් FFMPEG කේතය වේ**\n\n`{ffmpegcode[0]}`")
     return
 
 
 async def clearqueue(e):
     if str(e.sender_id) not in OWNER and event.sender_id !=DEV:
         return
-    await e.reply("**Cleared Queued Files!**")
+    await e.reply("**පෝලිම් ගොනු හිස් කරන ලදී!**")
     QUEUE.clear()
     return
 
@@ -245,7 +245,7 @@ async def fast_download(e, download_url, filename=None):
                     t,
                     e,
                     time.time(),
-                    f"** Downloading video from {download_url}**",
+                    f"** {download_url} වෙතින් වීඩියෝව බාගත කිරීම**",
                 )
             ),
         )
