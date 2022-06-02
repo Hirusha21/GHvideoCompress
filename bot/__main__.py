@@ -201,8 +201,8 @@ async def something():
                 nn = await e.edit(
                     "**🗜 සම්පීඩනය කරමින්...**",
                     buttons=[
-                        [Button.inline("STATS", data=f"stats{wah}")],
-                        [Button.inline("CANCEL", data=f"skip{wah}")],
+                        [Button.inline("වත්මන් තත්ත්වය", data=f"stats{wah}")],
+                        [Button.inline("අවලංගු කරන්න", data=f"skip{wah}")],
                     ],
                 )
                 cmd = f"""ffmpeg -i "{dl}" {ffmpegcode[0]} "{out}" -y"""
@@ -223,7 +223,7 @@ async def something():
                 ees = dt.now()
                 ttt = time.time()
                 await nn.delete()
-                nnn = await e.client.send_message(e.chat_id, "** Uploading...**")
+                nnn = await e.client.send_message(e.chat_id, "** උඩුගත කරමින්...**")
                 with open(out, "rb") as f:
                     ok = await upload_file(
                         client=e.client,
