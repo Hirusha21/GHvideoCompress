@@ -41,7 +41,7 @@ async def _(e):
 @bot.on(events.NewMessage(pattern="/showthumb"))
 async def _(e):
     if str(e.sender_id) not in OWNER and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+        return e.reply("**සමාවන්න ඔබ බලයලත් පරිශීලකයෙක් නොවේ!**")
     await getthumb(e)
 
 
