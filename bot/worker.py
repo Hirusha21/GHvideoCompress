@@ -63,8 +63,8 @@ async def dl_link(event):
     nn = await xxx.edit(
         "**🗜 සම්පීඩනය කරමින්...**",
         buttons=[
-            [Button.inline("STATS", data=f"stats{wah}")],
-            [Button.inline("CANCEL", data=f"skip{wah}")],
+            [Button.inline("දැනට පවතින තත්වය", data=f"stats{wah}")],
+            [Button.inline("අවලංගු කරන්න", data=f"skip{wah}")],
         ],
     )
     cmd = f"""ffmpeg -i "{dl}" {ffmpegcode[0]} "{out}" -y"""
@@ -144,10 +144,10 @@ async def encod(event):
                 name = "video_" + dt.now().isoformat("_", "seconds") + ".mp4"
             QUEUE.update({doc.id: [name, doc]})
             return await xxx.edit(
-                "**Added This File in Queue**"
+                "**මෙම ගොනුව පෝලිමේ එක් කරන ලදී**"
             )
         WORKING.append(1)
-        xxx = await event.reply("** Downloading...**")
+        xxx = await event.reply("** බාගනිමින්...**")
         s = dt.now()
         ttt = time.time()
         dir = f"downloads/"
@@ -169,7 +169,7 @@ async def encod(event):
                                 t,
                                 xxx,
                                 ttt,
-                                f"** Downloading**\n__{filename}__",
+                                f"** බාගනිමින්**\n__{filename}__",
                             )
                         ),
                     )
