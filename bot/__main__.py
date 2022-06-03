@@ -201,8 +201,8 @@ async def something():
                 nn = await e.edit(
                     "**🗜 සම්පීඩනය කරමින්...**",
                     buttons=[
-                        [Button.inline("STATS", data=f"stats{wah}")],
-                        [Button.inline("CANCEL", data=f"skip{wah}")],
+                        [Button.inline("දැනට පවතින තත්වය", data=f"stats{wah}")],
+                        [Button.inline("අවලංගු කරන්න", data=f"skip{wah}")],
                     ],
                 )
                 cmd = f"""ffmpeg -i "{dl}" {ffmpegcode[0]} "{out}" -y"""
